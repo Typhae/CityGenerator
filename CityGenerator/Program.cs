@@ -1,7 +1,7 @@
 ﻿namespace CityGenerator
 {
     /* TODO:
-     * Biome
+     * Add more biomes
      * Population
      * Local Resources
      * System of government
