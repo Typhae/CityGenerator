@@ -1,0 +1,41 @@
+[
+  {
+    "BiomeName": "Tundra",
+    "Resources": [
+      "Coal",
+      "Hardwood",
+      "Precious Metals",
+      "Oil",
+      "Fish"
+    ]
+  },
+  {
+    "BiomeName": "Savanna",
+    "Resources": [
+      "Hide",
+      "Ivory",
+      "Incense",
+      "Fur",
+      "Clay",
+      "Diamonds"
+    ]
+  },
+  {
+    "BiomeName": "Tropical Rainforest",
+    "Resources": [
+      "Spices",
+      "Softwood",
+      "Cacao",
+      "Coffee"
+    ]
+  },
+  {
+    "BiomeName": "Mangrove Swamp",
+    "Resources": [
+      "Mushrooms",
+      "Herbs",
+      "Gossamer",
+      "Peat"
+    ]
+  }
+]
