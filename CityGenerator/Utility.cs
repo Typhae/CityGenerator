@@ -18,13 +18,13 @@ namespace CityGenerator
                 return new List<Biome>();
             return biomes;
         }
-        public static List<Governments> GetGovernments()
+        public static List<Government> GetGovernments()
         {
             using StreamReader reader = new("Governments.json");
             var json = reader.ReadToEnd();
-            var governments = JsonSerializer.Deserialize<List<Governments>>(json);
+            var governments = JsonSerializer.Deserialize<List<Government>>(json);
             if (governments == null)
-                return new List<Governments>();
+                return new List<Government>();
             return governments;
         }
     }

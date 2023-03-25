@@ -56,9 +56,48 @@
             return biome;
         }
 
+        static Government SelectGovernment()
+        {
+            Console.WriteLine("Please select your city's government ruling system by typing it's corresponding number");
+            Console.WriteLine("1:Rule of the many");
+            Console.WriteLine("2:Rule of the few");
+            Console.WriteLine("3:Rule of authority");
+            Console.WriteLine("4:Contested rule");
+            Console.WriteLine("*:Random");
+
+            var selectedGovernment = Console.ReadLine();
+
+            var government = new Government();
+            var governments = Utility.GetGovernments();
+            switch ((selectedGovernment))
+            {
+                case "1":
+                    government = governments[0];
+                    Console.WriteLine($"Rule: {government.Rule}");
+                    break;
+                case "2":
+                    government = governments[1];
+                    Console.WriteLine($"Rule: {government.Rule}");
+                    break;
+                case "3":
+                    government = governments[2];
+                    Console.WriteLine($"Rule: {government.Rule}");
+                    break;
+                case "4":
+                    government = governments[3];
+                    Console.WriteLine($"Rule: {government.Rule}");
+                    break;
+                case "*":
+                    var rnd = new Random();
+                    government = governments[rnd.Next(0, governments.Count)];
+                    Console.WriteLine($"Rule: {government.Rule}");
+                    break;
+            }
+            return government;
+        }
         static void CityGenerator()
         {
-            
+
             var rnd = new Random();
             var biome = SelectBiome();
             var allResources = biome.Resources;
@@ -67,6 +106,14 @@
             if (allResources != null)
                 resources = allResources.OrderBy(x => rnd.Next()).Take(3).ToList();
 
+            var government = SelectGovernment();
+            var allGoverntmentTypes = government.GovernmentType;
+            var govermentTypes = new List<string>();
+
+            if (allGoverntmentTypes != null)
+                govermentTypes = allGoverntmentTypes.OrderBy(x => rnd.Next()).Take(1).ToList();
+
+            Console.WriteLine($"Government: {govermentTypes[0]}");
 
             var minPopulation = 12000;
             var maxPopulation = 1000000;
@@ -86,15 +133,11 @@
                 cityType = "Large Metropolis";
             else if (population >= 800000)
                 cityType = "Megalopolis";
-            //var governments = new List<string> {"Anarchy", "Capitalism", "Colonialism", "Despotism", "Feudalism", "Monarchy", "Plutocracy", "Magocracy", "Totalitarianism", "Socialism", "Tribalism", "Republicanism" };
-            var governments = Utility.GetGovernments();
-            var government = governments[rnd.Next(0, governments.Count)];
 
-            // Console.WriteLine($"Biome: {biome.BiomeName}");
+
 
             Console.WriteLine($"Local Resources: {resources[0]}, {resources[1]}, {resources[2]}");
             Console.WriteLine(cityType);
-            Console.WriteLine(government.GovernmentType);
             Console.WriteLine($"Population: {population}");
 
         }

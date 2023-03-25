@@ -1,11 +1,36 @@
 ﻿[
   {
-    "GovernmentType": "Anarchy"
+    "Rule": "Rule of the Many",
+    "GovernmentType": [
+      "Democracy ",
+      "Republic",
+      "Democratic Rebublic",
+      "Federation"
+    ]
   },
   {
-    "GovernmentType": "Capitalism"
+    "Rule": "Rule of the Few",
+    "GovernmentType": [
+      "Oligarchy",
+      "Aristocracy",
+      "Theocracy",
+      "Magocracy"
+    ]
   },
   {
-    "GovernmentType": "Colonialism"
+    "Rule": "Rule of Authority",
+    "GovernmentType": [
+      "Fascism",
+      "Monarchy",
+      "Empire"
+    ]
+  },
+  {
+    "Rule": "Contested Rule",
+    "GovernmentType": [
+      "Communism",
+      "Anarchy",
+      "Military Coup"
+    ]
   }
 ]

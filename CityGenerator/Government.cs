@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace CityGenerator
 {
-    public class Governments
+    public class Government
     {
-        public string? GovernmentType { get; set; }
+        public string? Rule { get; set; }
+        public List<string>? GovernmentType { get; set; }
 
 
     }
